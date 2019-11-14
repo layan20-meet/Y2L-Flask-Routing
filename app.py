@@ -13,7 +13,8 @@ def home():
 
 @app.route('/store')
 def store():
-	return render_template("store.html")
+	products=session.query(Product).all()
+	return render_template("store.html" , products=products)
 
 @app.route('/about')
 def about():
