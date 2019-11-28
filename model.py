@@ -10,7 +10,7 @@ class Product(Base):
    Name = Column(String)
    Price = Column(Float)
    Picture_Link = Column(String)
-   Description=(String)
+   Description=Column(String)
 
 
 class Cart(Base):

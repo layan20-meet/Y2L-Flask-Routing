@@ -2,13 +2,58 @@
 <html>
 <head>
 	<title></title>
+	<style type="text/css">
+		.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+	</style>
 </head>
 <body>
 
 <h1> yla let's buy hoodies! </h1>
 
-<h1>{{ products }}! </h1>
-<a href="cart.html"><button type="button">add to cart</button></a>
+<h1>
+
+{% for product in products %}
+
+<div class="card">
+  <img src="../{{product.Picture_Link}}" alt="{{product.Name}}" style="width:100%">
+  <h1>{{product.Name}}</h1>
+  <p class="price"> {{product.Price}} </p>
+  <p>{{product.Description}}</p>
+  <p><button><a href="/Add_To_Cart/{{product.id}}"> add to cart </button> </p>
+</div>
+
+{% endfor %}
+
+
+
+</h1>
 
 
 </body>

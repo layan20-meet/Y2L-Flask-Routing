@@ -40,7 +40,7 @@ def update_Picture_Link(name, Picture_Link):
    student_object.Picture_Link = Picture_Link
    session.commit()
  
-def delete_student(name):
+def delete_product(name):
    session.query(Product).filter_by(
        Name=name).delete()
    session.commit()
@@ -61,3 +61,5 @@ def Add_To_Cart(ProductID):
         ProductID=ProductID)
     session.add(Cart_object)
     session.commit()
+
+# add_product("best hoodie" , 45 , "best_hoodie.jpeg" , "this is one of the most comfortable hoodies, buy it now!")

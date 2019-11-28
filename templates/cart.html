@@ -5,12 +5,18 @@
 </head>
 <body>
 
-<!-- Delete this section when you reach this file -->
+
 <h1> your greatest cart of all time</h1>
+{% for p in cart %}
 
+<div class="card">
+  <img src="../{{p.Picture_Link}}" alt="{{p.Name}}" style="width:100%">
+  <h1>{{p.Name}}</h1>
+  <p class="price"> {{p.Price}} </p>
+  <p>{{p.Description}}</p>
+</div>
 
-
-<!-- ------------------ -->
+{% endfor %}
 
 </body>
 </html>
